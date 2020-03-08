@@ -207,8 +207,11 @@ def get_maplist(request):
 
 # 获取用户注册情况
 def get_initlist(request):
+    all_users = TUser.objects.count()
+    huoyue = TUser.objects.filter(t_flag=1).count()
     data = {
-        "x": ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-        "y": [5, 20, 36, 10, 10, 20]
+        "x": ['活跃人数','总用户数'],
+        "y": [huoyue,all_users]
     }
     return JsonResponse(data)
+
