@@ -14,4 +14,6 @@ urlpatterns =[
     path('loadusers/',views.loadusers,name='loadusers'),
     path('add_user/',views.add_user,name='add_user'),
     path('del_user/',views.del_user,name='del_user'),
+    path('get_maplist/',views.get_maplist,name='get_maplist'),
+    path('get_initlist/',views.get_initlist,name='get_initlist'),
 ]

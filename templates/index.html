@@ -15,6 +15,10 @@
     <script src="{% static 'jqgrid/js/trirand/i18n/grid.locale-cn.js' %}"></script>
     <script src="{% static 'bs/js/ajaxfileupload.js' %}"></script>
 
+    <script src="{% static 'echarts/js/echarts.min.js' %}"></script>
+    <script src="{% static 'echarts/js/echarts.min.js' %}"></script>
+    <script src="{% static 'echarts/js/china.js' %}"></script>
+
 </head>
 <body>
 <div class="container-fluid">
@@ -29,7 +33,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">欢迎：{{ uname }}</a></li>
-                    <li><a href="#">退出登录 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                    <li><a href="{% url 'showapp:login' %}">退出登录 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -51,7 +55,8 @@
                   <div class="panel-body">
                      <ul class="nav nav-pills nav-stacked">
                         <li><a href="javascript:$('#centerLayout').load('{% static 'static_html/users.html' %}')" style="font-weight: bold">用户们</a></li>
-                        <li><a href="javascript:$('#centerLayout').load('{% static 'static_html/users1.html' %}')" style="font-weight: bold">用户分布</a></li>
+                        <li><a href="javascript:$('#centerLayout').load('{% static 'static_html/echart_map.html' %}')" style="font-weight: bold">用户分布图</a></li>
+                        <li><a href="javascript:$('#centerLayout').load('{% static 'static_html/echart_init.html' %}')" style="font-weight: bold">用户注册图</a></li>
                     </ul>
                   </div>
                 </div>

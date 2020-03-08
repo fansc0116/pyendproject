@@ -82,14 +82,14 @@
                         alert('添加失败')
                     }else if (data == 'changeok'){
                         alert('修改成功')
-                        $('#change'+idd).parent().prev().text(add1)
-                        $('#change'+idd).parent().prev().prev().text(flag)
-                        $('#change'+idd).parent().prev().prev().prev().text(sex)
-                        $('#change'+idd).parent().prev().prev().prev().prev().text(nota)
-                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().text(add)
-                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().prev().text(pwd)
-                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().prev().prev().text(tel)
-                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text(name)
+                        $("#upload_add1").val(add1);
+                        $("#upload_flag").val(flag);
+                        $("#upload_sex").val(sex);
+                        $("#upload_nota").val(nota);
+                        $("#upload_add").val(add);
+                        $("#upload_pwd").val(pwd);
+                        $("#upload_tel").val(tel);
+                        $("#upload_name").val(name);
                     }else if (data == 'changeerror'){
                         alert('修改失败')
                     }
@@ -108,7 +108,6 @@
     <li class="active"><a href="#"><b>用户信息</b></a></li>
 </ul>
 
-<div class="panel panel-default">
     <!-- jqgrid表格的容器 -->
     <table id="bannerTable"></table>
     <script>
@@ -136,15 +135,15 @@
         //修改轮播图
         function changefn(a) {
             console.log(a)
-            var idd = $("#upload_id").val(a);
-            var add1 = $("#upload_add1").val($('#change'+a).parent().prev().text());
-            var flag = $("#upload_flag").val($('#change'+a).parent().prev().prev().text());
-            var sex = $("#upload_sex").val($('#change'+a).parent().prev().prev().prev().text());
-            var nota = $("#upload_nota").val($('#change'+a).parent().prev().prev().prev().prev().text());
-            var add = $("#upload_add").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().text());
-            var pwd = $("#upload_pwd").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().text());
-            var tel = $("#upload_tel").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().prev().text());
-            var name = $("#upload_name").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+            $("#upload_id").val(a);
+            $("#upload_add1").val($('#change'+a).parent().prev().text());
+            $("#upload_flag").val($('#change'+a).parent().prev().prev().text());
+            $("#upload_sex").val($('#change'+a).parent().prev().prev().prev().text());
+            $("#upload_nota").val($('#change'+a).parent().prev().prev().prev().prev().text());
+            $("#upload_add").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().text());
+            $("#upload_pwd").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().text());
+            $("#upload_tel").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().prev().text());
+            $("#upload_name").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
             $('#upload_pic').prop('disabled','disabled')
         };
     </script>
@@ -155,7 +154,7 @@
     </div>
     <div id="bannerPagerNew" style="width: auto;height: 50px"></div>
 
-</div>
+
 <!--模态框的打开方式  可以使用modal方法打开 也可以通过指定data-target与data-toggle两个属性来打开指定的模态框 -->
 <button class="btn btn-primary" data-aa="@456" data-whatever="@123" id="btn" data-toggle="modal" data-target="#myModal">添加</button>
 <script>

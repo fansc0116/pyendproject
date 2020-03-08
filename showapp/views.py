@@ -4,12 +4,14 @@ import re
 import string
 import json
 from django.shortcuts import render,HttpResponse
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from redis import Redis
 from fsc_cmfw1 import settings
 from utils.send_mess import YunPian
 from showapp.models import TSlideshow,TUser
 import time
+from django.db.models import Count
 red = Redis(host='localhost', port=6379)  # 连接redis数据库
 
 
@@ -186,9 +188,27 @@ def del_user(request):
     id  = request.POST.get('id')
     print(id)
     try:
-        d = TSlideshow.objects.get(t_id=id)
+        d = TUser.objects.get(t_id=id)
         print(d)
         d.delete()
         return HttpResponse('ok')
     except:
         return HttpResponse('error')
+
+# 获取地区对应的用户数量
+def get_maplist(request):
+    citylist=TUser.objects.values('t_add').annotate(Count('t_id'))
+    print('citylist:',citylist)
+    data=[]
+    for i in citylist:
+        data.append({"name": i['t_add'], "value": i['t_id__count']})
+    print('data:',data)
+    return JsonResponse(data, safe=False)
+
+# 获取用户注册情况
+def get_initlist(request):
+    data = {
+        "x": ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
+        "y": [5, 20, 36, 10, 10, 20]
+    }
+    return JsonResponse(data)
