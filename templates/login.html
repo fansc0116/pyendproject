@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>持明法周后台管理系统</title>
+    <link rel="stylesheet" href="{% static 'bs/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bs/css/ui.jqgrid-bootstrap.css' %}">
+    <script src="{% static 'bs/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'bs/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'jqgrid/js/i18n/grid.locale-cn.js' %}"></script>
+    <script src="{% static 'jqgrid/js/jquery.jqGrid.min.js' %}"></script>
+
+</head>
+<body>
+<div class="container">
+{#    标题#}
+    <div class="page-header">
+        <h2 class="text-center" id="title">持明法周管后台理系统登录页面</h2>
+    </div>
+{#    表单#}
+    <script type="text/javascript">
+    // 发送按钮倒计时代码
+        var countdown = 60;
+        function settime(obj) {
+            if (countdown == 0) {
+                obj.removeAttribute("disabled");
+                obj.value = "免费获取验证码";
+                countdown = 60;
+                return;
+            } else {
+                obj.setAttribute("disabled", true);
+                obj.value = "重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function () {
+                settime(obj)
+                }
+                , 1000)
+        }
+
+        $(function () {
+            var flag1 = false;
+            //验证手机号
+            $('#mobile').blur(function () {
+                var username = $('#mobile').val();
+                var phonereg = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/; // 判断手机号是否合法
+                if (username.trim() === '') {
+                    flag1 = false;
+                    $('#pid').text('手机号不能为空！').css('color','red');
+                } else if (phonereg.test(username)) {
+                    flag1 = true
+                    $('#pid').text('OK！').css('color','green')
+                } else {
+                    flag1 = false;
+                    $('#pid').text('该手机号不合法！').css('color','red')
+                }
+
+            });
+
+            // 点击获取验证码， 向后台发送请求验证码
+            $('#forcode').click(function () {
+                // 向后台发送ajax请求获取验证码
+                $.ajax({
+                    url: "{% url 'showapp:get_code' %}",
+                    type: "POST",
+                    data: {mobile: $("#mobile").val()},       // 将手机号参数传至后台
+                    success: function (data) {
+                        console.log(data)
+                        if (data=='ok'){
+                            alert('获取验证码成功')
+                        }else if (data=='error') {
+                            alert('60秒内已经获取过，稍后请重试')
+                        }else {
+                            alert('what?')
+                        }
+                    }
+                });
+
+            });
+
+           // 登录按钮
+            $('#loginButtonId').click(function () {
+                var code_input = $('#basic-url').val();
+                var mobile = $('#mobile').val();
+                var uname = $('#uname').val();
+                 if (code_input.trim() === '') {
+                     $('#pid1').text('验证码不能为空！').css('color','red');
+                 } else {
+                    if (flag1 === true) {
+                        $.ajax({
+                            type: 'post',
+                            url: '{% url 'showapp:check_user' %}',
+                            data: {code_input: code_input,mobile:mobile,uname:uname},
+                            success: function (msg) {
+                                if(msg==='ok'){
+                                    location.href='/showapp/index?uname='+mobile
+                                }else{
+                                    $('#pid1').text('手机号或验证码错误！').css('color','red');
+                                }
+                            }
+                        })
+                    }else {
+                         $('#pid1').text('请填写手机号或手机号格式不正确！').css('color','red');
+                    }
+                }
+            });
+
+
+
+        });
+    </script>
+    <!--手机号码输入框代码-->
+    <div class="container">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="form-group">
+                <form id="loginForm" role="form" action="" method="post" class="form-horizontal">
+
+                    <div class="form-group">
+                        <label for="mobile" class="">手机号码:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" required id="mobile" name="mobile" placeholder="手机号码">
+                            <span class="input-group-btn">
+                                <input type="button" id="forcode" onclick="settime(this)" value="免费获取验证码" class="btn btn-success">
+                            </span>
+                        </div>
+                        <span id="msgDiv"></span>
+                        <p class="help-block" id="pid">请填写绑定手机号</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="uname" class="">用户名</label>
+                        <input type="text" class="form-control" id="uname" minlength="5" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="basic-url" class="">验证码：</label>
+                        <input type="text" class="form-control" id="basic-url" required name="code">
+                        <p class="help-block" id="pid1"></p>
+                    </div>
+                    <div class="input-group">
+                        <input class="btn btn-success" type="button" id="loginButtonId" value="登录">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
