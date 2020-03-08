@@ -1,0 +1,277 @@
+<script>
+
+    $(function () {
+        $('#bannerTable').jqGrid({
+            url: "/showapp/loadusers/",
+            datatype: "json",
+            autowidth: true,
+            pager: "#bannerPagerNew",
+            viewrecords: true,
+            rownumbers: true,
+            rowNum: 3,
+            rowList: [3, 6, 10],
+            styleUI: "Bootstrap",
+            colNames: ["ID", "用户名", "电话", "密码", "省/市", "头像",'个签','性别','状态','详细地址','操作'],
+            colModel: [
+                {name: "id"},
+                {name: "name"},
+                {name: "tel"},
+                {name: "pwd"},
+                {name: "add"},
+                // 回显图片
+                {
+                    name: "pic", formatter: function (cellvalue, options, rowObject) {
+                        return "<img style='height:30px; width:30px' src='/static/"+cellvalue+"'>";
+                    }
+                },
+                {name: "nota"},
+                {name: "sex"},
+                {name: "flag"},
+                {name: "add1"},
+                {name:'option',formatter:function(cellvalue, options, rowObject){
+                    //按钮 button 修改 删除
+                        return '<button class="btn btn-warning" onclick="changefn(' + rowObject.id + ')" id="change' + rowObject.id + '" data-toggle="modal" data-target="#myModal">修改</button> ' +
+                                 '<button class="btn btn-danger" onclick="delfn(' + rowObject.id + ')"id="del' + rowObject.id + '">删除</button>';
+                },}
+            ],
+        });
+
+
+
+        // 点击模态框的保存按钮  将轮播图的信息发送到后台进行保存
+        $("#save").click(function () {
+            // 通过formdata完成文件上传
+            var name = $("#upload_name").val();
+            var pwd = $("#upload_pwd").val();
+            var tel = $("#upload_tel").val();
+            var add = $("#upload_add").val();
+            var pic = $("#upload_pic")[0].files[0];
+            var nota = $("#upload_nota").val();
+            var sex = $("#upload_sex").val();
+            var flag = $("#upload_flag").val();
+            var add1 = $("#upload_add1").val();
+            var idd = $("#upload_id").val();
+            console.log(idd)
+            var formData = new FormData;
+            formData.append('id', idd);
+            formData.append('name', name);
+            formData.append('tel', tel);
+            formData.append('pwd', pwd);
+            formData.append('add', add);
+            formData.append('nota', nota);
+            formData.append('sex', sex);
+            formData.append('flag', flag);
+            formData.append('add1', add1);
+            formData.append('pic', pic);
+            $.ajax({
+                url: "/showapp/add_user/",
+                datatype: "json",
+                type: "post",
+                //  如何获取当前表单的数据
+                data: formData,
+                async: false,
+                contentType: false,     // 不设置contenttype请求头
+                processData: false,     // 使数据不做处理
+                success: function (data) {
+                    // 根据返回值判断是否上传成功，上传成功隐藏模态框
+                    console.log(data)
+                    $('#myModal').modal('hide')
+                    if (data == 'createok'){
+                        alert('添加成功')
+                    }else if (data == 'createerror'){
+                        alert('添加失败')
+                    }else if (data == 'changeok'){
+                        alert('修改成功')
+                        $('#change'+idd).parent().prev().text(add1)
+                        $('#change'+idd).parent().prev().prev().text(flag)
+                        $('#change'+idd).parent().prev().prev().prev().text(sex)
+                        $('#change'+idd).parent().prev().prev().prev().prev().text(nota)
+                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().text(add)
+                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().prev().text(pwd)
+                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().prev().prev().text(tel)
+                        $('#change'+idd).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text(name)
+                    }else if (data == 'changeerror'){
+                        alert('修改失败')
+                    }
+                }
+            });
+        });
+    })
+
+</script>
+
+
+<div class="page-header">
+    <h2>用户管理</h2>
+</div>
+<ul class="nav nav-tabs ">
+    <li class="active"><a href="#"><b>用户信息</b></a></li>
+</ul>
+
+<div class="panel panel-default">
+    <!-- jqgrid表格的容器 -->
+    <table id="bannerTable"></table>
+    <script>
+        //删除
+        function delfn(a) {
+            console.log(a)
+             $.ajax({
+                url: "/showapp/del_user/",
+                datatype: 'json',
+                type: 'POST',
+                data: {'id':a},
+                success: function (msg) {
+                    console.log(msg)
+                    if (msg == 'ok'){
+                        alert('删除成功')
+                        $('#del'+a).parent().parent().remove()
+                    } else {
+                        alert('删除失败了')
+                    }
+                }
+            })
+
+        };
+
+        //修改轮播图
+        function changefn(a) {
+            console.log(a)
+            var idd = $("#upload_id").val(a);
+            var add1 = $("#upload_add1").val($('#change'+a).parent().prev().text());
+            var flag = $("#upload_flag").val($('#change'+a).parent().prev().prev().text());
+            var sex = $("#upload_sex").val($('#change'+a).parent().prev().prev().prev().text());
+            var nota = $("#upload_nota").val($('#change'+a).parent().prev().prev().prev().prev().text());
+            var add = $("#upload_add").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().text());
+            var pwd = $("#upload_pwd").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().text());
+            var tel = $("#upload_tel").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().prev().text());
+            var name = $("#upload_name").val($('#change'+a).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text());
+            $('#upload_pic').prop('disabled','disabled')
+        };
+    </script>
+
+    <div class="alert alert-success" role="alert" id="addBannerMsg" style="display: none">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong id="msgShow"></strong>
+    </div>
+    <div id="bannerPagerNew" style="width: auto;height: 50px"></div>
+
+</div>
+<!--模态框的打开方式  可以使用modal方法打开 也可以通过指定data-target与data-toggle两个属性来打开指定的模态框 -->
+<button class="btn btn-primary" data-aa="@456" data-whatever="@123" id="btn" data-toggle="modal" data-target="#myModal">添加</button>
+<script>
+    $('#btn').click(function () {
+        $("#upload_name").val('');
+        $("#upload_pwd").val('');
+        $("#upload_tel").val('');
+        $("#upload_add").val('');
+        $("#upload_nota").val('');
+        $("#upload_sex").val('');
+        $("#upload_flag").val('');
+        $("#upload_add1").val('');
+        $("#upload_id").val('系统分配');
+        $('#upload_pic').prop('disabled',false)
+        })
+</script>
+    <!--
+<button class="btn btn-warning" id="btn2"><span class="glyphicon glyphicon-edit"></span> 修改</button>
+<button class="btn btn-danger" id="del">删除</button>
+-->
+
+<body>
+<!--静态模态框-->
+<div class="modal fade" tabindex="-1" data-backdrop="false" role="dialog" id="myModal">
+    <div class="modal-dialog">
+        <!--模态框内容-->
+        <div class="modal-content">
+            <!--模态框标题-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">编辑轮播图</h4>
+            </div>
+            <!--模态框内容体-->
+            <form action="" id="bannerForm" enctype="multipart/form-data">
+                <div class="modal-body form-horizontal">
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">ID：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_id" class="form-control" value="系统分配" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">用户名：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_name" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">电话：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_tel" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">密码：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_pwd" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">省/市：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_add" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">头像：</label>
+                        <div class="col-sm-8">
+                            <input type="file" name="pic" id="upload_pic" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">个签：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_nota" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">性别：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_sex" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">状态：</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="flag" id="upload_flag" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-sm-3 control-label">详细地址：</label>
+                        <div class="col-sm-8">
+                            <input type="text"  id="upload_add1" class="form-control" >
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="save">保存</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">取消</button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
