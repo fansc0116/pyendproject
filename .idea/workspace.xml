@@ -2,14 +2,182 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6627c83f-c9c4-4817-b414-3f40b1bf1008" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fsc_cmfw1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fsc_cmfw1/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fsc_cmfw1/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fsc_cmfw1/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fsc_cmfw1/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/img/123.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/img/微信图片_20200125230643.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/img/微信图片_20200125230643_ucu54Qd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/showapp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/back.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/css/ui.jqgrid-bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/Chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/Chart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/ajaxfileupload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/jquery-1.11.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/jquery-2.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/jquery.validate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bs/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/carouse/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/carouse/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/carouse/544cfd607318138adda68e01d19099a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-icons_2694e8_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-icons_3d80b3_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-icons_72a7cf_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/cupertino/jquery-ui-1.8.16.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_flat_0_aaaaaa_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_flat_0_eeeeee_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_flat_55_ffffff_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_flat_75_ffffff_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_highlight-soft_25_0073ea_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-bg_highlight-soft_50_dddddd_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-icons_0073ea_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-icons_666666_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-icons_ff0084_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/flick/jquery-ui-1.8.16.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_diagonals-small_40_db4865_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_diagonals-small_50_93c3cd_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_diagonals-small_50_ff3853_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_diagonals-small_75_ccd232_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_dots-medium_80_ffff38_4x4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_dots-small_35_35414f_2x2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_flat_75_ba9217_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_flat_75_ffffff_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-bg_white-lines_85_f7f7ba_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-icons_88a206_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-icons_c02669_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-icons_e1e463_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-icons_ffeb33_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/hot-sneaks/jquery-ui-1.8.16.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_flat_55_fbec88_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_glass_85_dfeffc_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_217bc0_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_469bdd_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_6da8d5_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_d8e7f3_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/images/ui-icons_f9bd01_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/redmond/jquery-ui-1.8.16.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_flat_55_999999_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_flat_75_aaaaaa_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_glass_45_0078ae_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_glass_55_f8da4e_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_glass_75_79c9ec_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_gloss-wave_45_e14f1c_500x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_gloss-wave_50_6eac2c_500x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_gloss-wave_75_2191c0_500x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_0078ae_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_056b93_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_d8e7f3_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_e0fdff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_f5e175_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_f7a50d_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/images/ui-icons_fcd113_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/start/jquery-ui-1.8.20.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-icons_228ef1_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-icons_ef8c08_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-icons_ffd27a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/images/ui-icons_ffffff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/css/ui-lightness/jquery-ui-1.8.16.custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/jquery-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/trirand/addons/ui.multiselect.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/trirand/ui-anim_basic_16x16_2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/trirand/ui.jqgrid-bootstrap-ui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/trirand/ui.jqgrid-bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/trirand/ui.jqgrid-bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/trirand/ui.jqgrid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/ui.jqgrid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/css/ui.multiselect.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/demo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/demo_pg.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/i18n/grid.locale-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/jquery.jqGrid.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/jquery.jqGrid.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/trirand/i18n/grid.locale-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/trirand/jquery.jqGrid.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jqgrid/js/trirand/src/jquery.jqGrid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/static_html/banner.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/send_mess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="fsc_cmfw1" />
@@ -70,7 +238,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,7 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="534" />
     <option name="width" value="839" />
     <option name="height" value="745" />
@@ -104,11 +272,6 @@
             <path>
               <item name="fsc_cmfw1" type="b2602c69:ProjectViewProjectNode" />
               <item name="fsc_cmfw1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fsc_cmfw1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fsc_cmfw1" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -180,7 +343,7 @@
       <workItem from="1583406987713" duration="14655000" />
       <workItem from="1583457128785" duration="1349000" />
       <workItem from="1583460528041" duration="876000" />
-      <workItem from="1583637914865" duration="238000" />
+      <workItem from="1583637914865" duration="546000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1583460750026</created>
@@ -193,10 +356,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17118000" />
+    <option name="totallyTimeSpent" value="17426000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="534" y="0" width="839" height="745" extended-state="0" />
+    <frame x="534" y="0" width="839" height="745" extended-state="1" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4987013" visible="true" weight="0.28241336" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
