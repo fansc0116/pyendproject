@@ -8,15 +8,15 @@ from django.views.decorators.csrf import csrf_exempt
 from redis import Redis
 from fsc_cmfw1 import settings
 from utils.send_mess import YunPian
-from showapp.models import TSlideshow
+from showapp.models import TSlideshow,TUser
 import time
-import uuid,os
 red = Redis(host='localhost', port=6379)  # 连接redis数据库
 
 
 # 登录页面
 def login(request):
     return render(request, 'login.html')
+
 # 显示主页
 def index(request):
     uname = request.GET.get('uname')
@@ -53,13 +53,6 @@ def check_user(request):
     else:
         return HttpResponse('error')
 
-# 转json
-def my_default(obj):
-    if isinstance(obj,TSlideshow):
-        print(obj.t_url)
-        dict = {'id':obj.t_id,'title':obj.t_title,'status':obj.t_flag,'create_time':obj.t_createtime,'pic':str(obj.t_url)}
-        return dict
-
 #获取轮播图
 def loadbanner(request):
     rowNum = request.GET.get('rows')
@@ -75,10 +68,16 @@ def loadbanner(request):
         "records": pgntor.count,  # 总数据条
         "rows": list(pg)
     }
+    # 转json
+    def my_default(obj):
+        if isinstance(obj, TSlideshow):
+            print(obj.t_url)
+            dict = {'id': obj.t_id, 'title': obj.t_title, 'status': obj.t_flag, 'create_time': obj.t_createtime,
+                    'pic': str(obj.t_url)}
+            return dict
     str_json = json.dumps(data,default=my_default)
     print(str_json)
     return HttpResponse(str_json)
-
 
 # 添加/修改轮播图
 @csrf_exempt
@@ -118,5 +117,78 @@ def del_banner(request):
     except:
         return HttpResponse('error')
 
-# 修改轮播图
+#获取用户信息
+def loadusers(request):
+    rowNum = request.GET.get('rows')
+    pageNum = request.GET.get('page')
+    reqs = TUser.objects.all()
+    # page对象
+    pgntor = Paginator(reqs, rowNum)
+    pg = pgntor.page(pageNum)
+    # 生成数据
+    data = {
+        "page": pageNum,  # 当前页号
+        "total": pgntor.num_pages,  # 总页数
+        "records": pgntor.count,  # 总数据条
+        "rows": list(pg)
+    }
+    # 转json
+    def my_default(obj):
+        if isinstance(obj, TUser):
+            dict = {'id': obj.t_id, 'name': obj.t_name, 'tel': obj.t_tel, 'pwd': obj.t_pwd, 'salt': obj.t_salt,
+                    'add': obj.t_add,'pic': str(obj.t_pic), 'nota': obj.t_nota, 'sex': obj.t_sex,
+                    'flag': obj.t_flag,'add1': obj.t_add1}
+            return dict
+    str_json = json.dumps(data,default=my_default)
+    print(str_json)
+    return HttpResponse(str_json)
 
+# 添加/修改用户信息
+@csrf_exempt
+def add_user(request):
+    id = request.POST.get("id")
+    name = request.POST.get("name")
+    tel = request.POST.get("tel")
+    pwd = request.POST.get("pwd")
+    add = request.POST.get("add")
+    nota = request.POST.get("nota")
+    sex = request.POST.get("sex")
+    flag = request.POST.get("flag")
+    add1 = request.POST.get("add1")
+    pic = request.FILES.get("pic")
+    print(id,name,tel,pwd,add,nota,sex,flag,add1, pic, type(pic))
+    if pic:
+        a = TUser.objects.create(t_pic='img/'+pic.name,t_name=name,t_tel=tel,t_pwd=pwd,
+                                 t_add=add,t_nota=nota,t_sex=sex,t_flag=flag,t_add1=add1)
+        if a:
+            return HttpResponse("createok")
+        else:
+            return HttpResponse('createerror')
+    else:
+        try:
+            b = TUser.objects.get(t_id=id)
+            b.t_name=name
+            b.t_tel=tel
+            b.t_pwd=pwd
+            b.t_add=add
+            b.t_nota=nota
+            b.t_sex=sex
+            b.t_flag=flag
+            b.t_add1=add1
+            b.save()
+            return HttpResponse("changeok")
+        except:
+            return HttpResponse('changeerror')
+
+# 删除用户信息
+@csrf_exempt
+def del_user(request):
+    id  = request.POST.get('id')
+    print(id)
+    try:
+        d = TSlideshow.objects.get(t_id=id)
+        print(d)
+        d.delete()
+        return HttpResponse('ok')
+    except:
+        return HttpResponse('error')

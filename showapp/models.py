@@ -40,6 +40,7 @@ class TArtide(models.Model):
         db_table = 't_artide'
 
 
+# 轮播图
 class TSlideshow(models.Model):
     t_id = models.AutoField(primary_key=True)
     t_url = models.ImageField(upload_to='img')
@@ -68,6 +69,7 @@ class TTeacher(models.Model):
         db_table = 't_teacher'
 
 
+# 用户
 class TUser(models.Model):
     t_id = models.AutoField(primary_key=True)
     t_name = models.CharField(max_length=500, blank=True, null=True)
@@ -75,11 +77,11 @@ class TUser(models.Model):
     t_pwd = models.CharField(max_length=500, blank=True, null=True)
     t_salt = models.CharField(max_length=500, blank=True, null=True)
     t_add = models.CharField(max_length=500, blank=True, null=True)
-    t_pic = models.CharField(max_length=500, blank=True, null=True)
+    t_pic = models.ImageField(upload_to='img')
     t_nota = models.CharField(max_length=500, blank=True, null=True)
     t_sex = models.CharField(max_length=500, blank=True, null=True)
     t_flag = models.CharField(max_length=500, blank=True, null=True)
-    column_11 = models.CharField(db_column='Column_11', max_length=10, blank=True, null=True)  # Field name made lowercase.
+    t_add1 = models.CharField(max_length=500, blank=True, null=True)
     column_12 = models.CharField(db_column='Column_12', max_length=10, blank=True, null=True)  # Field name made lowercase.
     column_13 = models.CharField(db_column='Column_13', max_length=10, blank=True, null=True)  # Field name made lowercase.
 

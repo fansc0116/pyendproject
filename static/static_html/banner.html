@@ -25,7 +25,7 @@
                 },
                 {name:'option',formatter:function(cellvalue, options, rowObject){
                     //按钮 button 修改 删除
-                        return '<button class="btn btn-primary" onclick="changefn(' + rowObject.id + ')" id="change' + rowObject.id + '" data-toggle="modal" data-target="#myModal">修改</button> ' +
+                        return '<button class="btn btn-warning" onclick="changefn(' + rowObject.id + ')" id="change' + rowObject.id + '" data-toggle="modal" data-target="#myModal">修改</button> ' +
                                  '<button class="btn btn-danger" onclick="delfn(' + rowObject.id + ')"id="del' + rowObject.id + '">删除</button>';
                 }}
             ],
@@ -129,8 +129,10 @@
     <div id="bannerPagerNew" style="width: auto;height: 50px"></div>
     <!--模态框的打开方式  可以使用modal方法打开 也可以通过指定data-target与data-toggle两个属性来打开指定的模态框 -->
     <button class="btn btn-primary" data-aa="@456" data-whatever="@123" id="btn" data-toggle="modal" data-target="#myModal">添加</button>
+    <!--
     <button class="btn btn-warning" id="btn2"><span class="glyphicon glyphicon-edit"></span> 修改</button>
     <button class="btn btn-danger" id="del">删除</button>
+    -->
 </div>
 
 
